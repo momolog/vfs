@@ -81,6 +81,7 @@ module Vfs
             # optionally evaluated callback.
             type = type.call if (filter or type_required) and type.is_a?(Proc)
 
+            next if name == ''
             next if filter and (filter != type)
 
             entry = if type == :dir
